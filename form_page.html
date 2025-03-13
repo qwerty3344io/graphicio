@@ -102,32 +102,25 @@
     </form>
 </div>
 <script>
-    document.getElementById("submitBtn").addEventListener("click", function (event) {
-        event.preventDefault(); // ป้องกันการรีเฟรชหน้าเมื่อกดปุ่ม
+   document.getElementById("submitBtn").addEventListener("click", function (event) {
+    event.preventDefault(); // ป้องกันการรีเฟรชหน้าเมื่อกดปุ่ม
 
-        var formData = new FormData(document.querySelector("form"));
-        var data = {
-            content: document.querySelector('[name="content"]').value,
-            file: document.querySelector('[name="file_upload"]').files[0],
-            channels: Array.from(document.querySelectorAll('[name="channels[]"]:checked')).map(checkbox => checkbox.value)
-        };
-
-        // ฟังก์ชันในการส่งข้อมูล
-        fetch("https://script.google.com/macros/library/d/1lh01Ars4LA2CkQ7YjsSYB_JEBmqD3VNkoNmg3Z4GesYsrmQj8lK6hMDK/1", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.text())
-        .then(data => {
-            // แสดงข้อความแจ้งเตือนว่า "ส่งงานเรียบร้อยแล้ว"
-            alert("ส่งงานเรียบร้อยแล้ว!");
-        })
-        .catch(error => {
-            // หากเกิดข้อผิดพลาด
-            alert("เกิดข้อผิดพลาด!");
-        });
+    var formData = new FormData(document.querySelector("form"));  // ใช้ FormData เพื่อส่งข้อมูลทั้งหมดรวมถึงไฟล์
+    // ฟังก์ชันในการส่งข้อมูล
+    fetch("https://script.google.com/macros/s/AKfycbzVDrURyGZp6N5AxYWUj9RubuWXSOl1glM5-Hao7X7hopBn_6m8t4XrCo-VbRoPgFXizw/exec", {
+        method: "POST",
+        body: formData  // ส่งข้อมูลในรูปแบบ FormData
+    })
+    .then(response => response.text())
+    .then(data => {
+        // แสดงข้อความแจ้งเตือนว่า "ส่งงานเรียบร้อยแล้ว"
+        alert("ส่งงานเรียบร้อยแล้ว!");
+    })
+    .catch(error => {
+        // หากเกิดข้อผิดพลาด
+        alert("เกิดข้อผิดพลาด!");
     });
+});
 </script>
 
 </body>
