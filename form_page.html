@@ -100,6 +100,27 @@
     </div>
 </form>
 </div>
+<script>
+   document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault(); // ป้องกันการรีเฟรชหน้า
 
+        var formData = new FormData(this);
+
+        fetch("/", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = "/thank-you.html"; // Redirect ไปหน้าสำเร็จ
+            } else {
+                alert("เกิดข้อผิดพลาด! ลองใหม่อีกครั้ง");
+            }
+        })
+        .catch(error => {
+            alert("เกิดข้อผิดพลาด!");
+        });
+    });
+</script>
 </body>
 </html>
