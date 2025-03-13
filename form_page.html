@@ -101,27 +101,29 @@
         </div>
     </form>
 </div>
-<script>
-   document.getElementById("submitBtn").addEventListener("click", function (event) {
-    event.preventDefault(); // ป้องกันการรีเฟรชหน้าเมื่อกดปุ่ม
+<form name="job_submission" method="POST" data-netlify="true" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>เนื้อหางาน</label>
+        <textarea name="content" placeholder="กรุณาพิมพ์เนื้อหางาน" rows="5" required></textarea>
+    </div>
 
-    var formData = new FormData(document.querySelector("form"));  // ใช้ FormData เพื่อส่งข้อมูลทั้งหมดรวมถึงไฟล์
-    // ฟังก์ชันในการส่งข้อมูล
-    fetch("https://script.google.com/macros/library/d/17clj9qjbdoRAPeM6mmDqfrlwEBSIVR-nw2swrXvG-A1FT8D9MVt0LIm3/1", {
-        method: "POST",
-        body: formData  // ส่งข้อมูลในรูปแบบ FormData
-    })
-    .then(response => response.text())
-    .then(data => {
-        // แสดงข้อความแจ้งเตือนว่า "ส่งงานเรียบร้อยแล้ว"
-        alert("ส่งงานเรียบร้อยแล้ว!");
-    })
-    .catch(error => {
-        // หากเกิดข้อผิดพลาด
-        alert("เกิดข้อผิดพลาด!");
-    });
-});
-</script>
+    <div class="form-group">
+        <label>ไฟล์สำหรับประชาสัมพันธ์ (อัพโหลด)</label>
+        <input type="file" name="file_upload" required>
+    </div>
 
+    <div class="form-group">
+        <label>ช่องทางประชาสัมพันธ์</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="channels" value="Facebook"> Facebook</label>
+            <label><input type="checkbox" name="channels" value="Website"> Website</label>
+            <label><input type="checkbox" name="channels" value="Line"> Line</label>
+        </div>
+    </div>
+
+    <div class="form-btn">
+        <button type="submit">ส่งงาน</button>
+    </div>
+</form>
 </body>
 </html>
