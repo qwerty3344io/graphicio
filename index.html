@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>งานประชาสัมพันธ์ / ออกแบบกราฟฟิก</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #34e89e, #0f3443);
+             }
+        a {
+    text-decoration: none; /* ลบขีดเส้นใต้ */
+    outline: none; /* ลบเส้นขอบที่อาจเกิดขึ้น */
+    border: none; /* ลบเส้นขอบ (ถ้ามี) */
+          }
+        
+
+        header {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+            font-size: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .content-box {
+            background-color: #4CAF50;
+            color: white;
+            padding: 40px;
+            width: 250px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .content-box:hover {
+            background-color: #45a049;
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-box h2 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .content-box p {
+            font-size: 16px;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    งานประชาสัมพันธ์ / ออกแบบกราฟฟิก
+</header>
+
+<div class="container">
+    <!-- งานประชาสัมพันธ์: ทำให้เป็นลิงก์ -->
+    <a href="form_page.html">
+        <div class="content-box">
+            <h2>งานประชาสัมพันธ์</h2>
+        </div>
+    </a>
+
+    <!-- งานออกแบบกราฟฟิก: ทำให้เป็นลิงก์ -->
+    <a href="design_form.html">
+        <div class="content-box">
+            <h2>งานออกแบบกราฟฟิก</h2>
+        </div>
+    </a>
+</div>
+
+</body>
+</html>

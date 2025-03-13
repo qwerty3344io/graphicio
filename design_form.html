@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฟอร์มสั่งงานกราฟฟิก</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .form-btn {
+            text-align: center;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>งานออกแบบกราฟฟิก</h3>
+        <form>
+            <div class="form-group">
+                <label>ชื่อ-นามสกุล</label>
+                <input type="text" name="full_name" placeholder="กรุณากรอกชื่อ-นามสกุล" required>
+            </div>
+            <div class="form-group">
+                <label>ชื่อชิ้นงาน/โครงการ</label>
+                <input type="text" name="project_name" placeholder="กรุณากรอกชื่อชิ้นงาน" required>
+            </div>
+            <div class="form-group">
+                <label>วันใช้งานจริง (โปรดระบุ)</label>
+                <input type="date" name="real_use_date" required>
+            </div>
+            <div class="form-group">
+                <label>กำหนดส่งดราฟล่วงหน้า</label>
+                <label>ส่งดราฟ 1</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="draft1[]" value="1_day"> 1 วัน</label>
+                    <label><input type="checkbox" name="draft1[]" value="3_days"> ล่วงหน้า 3 วัน</label>
+                    <label><input type="checkbox" name="draft1[]" value="5_days"> ล่วงหน้า 5 วัน</label>
+                    <label><input type="checkbox" name="draft1[]" value="7_days"> ล่วงหน้า 7 วัน</label>
+                </div>
+                <label>ส่งดราฟ 2</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="draft2[]" value="1_day"> 1 วัน</label>
+                    <label><input type="checkbox" name="draft2[]" value="3_days"> ล่วงหน้า 3 วัน</label>
+                    <label><input type="checkbox" name="draft2[]" value="5_days"> ล่วงหน้า 5 วัน</label>
+                    <label><input type="checkbox" name="draft2[]" value="7_days"> ล่วงหน้า 7 วัน</label>
+                </div>
+                <label>ส่งดราฟ 3</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="draft3[]" value="1_day"> 1 วัน</label>
+                    <label><input type="checkbox" name="draft3[]" value="3_days"> ล่วงหน้า 3 วัน</label>
+                    <label><input type="checkbox" name="draft3[]" value="5_days"> ล่วงหน้า 5 วัน</label>
+                    <label><input type="checkbox" name="draft3[]" value="7_days"> ล่วงหน้า 7 วัน</label>
+                </div>
+                <label>ส่งดราฟงาน (ด่วน)</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="urgent_draft[]" value="1_day"> 1 วัน</label>
+                    <label><input type="checkbox" name="urgent_draft[]" value="3_days"> ล่วงหน้า 3 วัน</label>
+                    <label><input type="checkbox" name="urgent_draft[]" value="5_days"> ล่วงหน้า 5 วัน</label>
+                    <label><input type="checkbox" name="urgent_draft[]" value="7_days"> ล่วงหน้า 7 วัน</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>ประเภทของงาน (เลือกได้มากกว่า 1 ข้อ)</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="work_type[]" value="โปสเตอร์"> โปสเตอร์</label>
+                    <label><input type="checkbox" name="work_type[]" value="แบนเนอร์"> แบนเนอร์</label>
+                    <label><input type="checkbox" name="work_type[]" value="โบรชัวร์"> โบรชัวร์</label>
+                    <label><input type="checkbox" name="work_type[]" value="โลโก้"> โลโก้</label>
+                    <label><input type="checkbox" name="work_type[]" value="นามบัตร"> นามบัตร</label>
+                    <label><input type="checkbox" name="work_type[]" value="แผ่นผับ"> แผ่นผับ</label>
+                    <label><input type="checkbox" name="work_type[]" value="อื่นๆ"> อื่นๆ...</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>ประเภทไฟล์ (เลือกได้มากกว่า 1 ข้อ)</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="file_type[]" value="JPEG"> JPEG</label>
+                    <label><input type="checkbox" name="file_type[]" value="PNG"> PNG</label>
+                    <label><input type="checkbox" name="file_type[]" value="PDF"> PDF</label>
+                    <label><input type="checkbox" name="file_type[]" value="PowerPoint"> PowerPoint</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>ช่องทางการประชาสัมพันธ์</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="promotion[]" value="ไม่ต้องประชาสัมพันธ์"> ไม่ต้องประชาสัมพันธ์</label>
+                    <label><input type="checkbox" name="promotion[]" value="Facebook"> Facebook</label>
+                    <label><input type="checkbox" name="promotion[]" value="Website"> Website</label>
+                    <label><input type="checkbox" name="promotion[]" value="Line official"> Line official</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>รายละเอียดงาน</label>
+                <textarea name="work_details" placeholder="ระบุวันเวลา สถานที่ เนื้อหาโดยสรุปของงาน" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>ตัวอย่างรูปแบบงาน สำหรับใช้อ้างอิง (โปรดแนบไฟล์ตัวอย่าง)</label>
+                <input type="file" name="reference_file">
+            </div>
+            <div class="form-group">
+                <label>ข้อมูลเพิ่มเติม ส่งทาง Email (nopparat@jsccib.org)</label>
+            </div>
+            <div class="form-btn">
+                <button type="submit">ส่งงาน</button>
+            </div>
+           </div>
+   </body>
+</html>
