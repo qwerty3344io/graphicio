@@ -6,10 +6,10 @@
     <title>งานประชาสัมพันธ์</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #eef2f3;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,87 +19,111 @@
         .box {
             background-color: #ffffff;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            width: 450px;
+            max-width: 90%;
         }
 
         h3 {
             text-align: center;
-            color: #4CAF50;
-        }
-
-        .form-group {
+            color: #2E8B57;
+            font-size: 22px;
             margin-bottom: 20px;
         }
 
+        .form-group {
+            margin-bottom: 18px;
+        }
+
         .form-group label {
-            display: block;
             font-size: 14px;
             color: #333;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .form-group textarea,
         .form-group input {
             width: 100%;
-            padding: 10px;
-            margin-top: 5px;
+            padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .form-group textarea:focus,
+        .form-group input:focus {
+            border-color: #2E8B57;
+            box-shadow: 0 0 5px rgba(46, 139, 87, 0.3);
+            outline: none;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .checkbox-group label {
-            margin-right: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .form-btn {
             text-align: center;
+            margin-top: 20px;
         }
 
         .form-btn button {
-            background-color: #4CAF50;
+            background-color: #2E8B57;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px;
             font-size: 16px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 8px;
             width: 100%;
+            transition: 0.3s;
         }
 
         .form-btn button:hover {
-            background-color: #45a049;
+            background-color: #267047;
         }
     </style>
 </head>
 <body>
-<div class="container">
 <div class="box">
     <h3>งานประชาสัมพันธ์</h3>
-<form name="content" method="POST" data-netlify="true" enctype="multipart/form-data" action="/thank-you.html">
-    <div class="form-group">
-        <label>เนื้อหางาน</label>
-        <textarea name="content" placeholder="กรุณาพิมพ์เนื้อหางาน" rows="5" required></textarea>
-    </div>
-
-    <div class="form-group">
-        <label>ไฟล์สำหรับประชาสัมพันธ์ (อัพโหลด)</label>
-        <input type="file" name="file_upload" required>
-    </div>
-
-    <div class="form-group">
-        <label>ช่องทางประชาสัมพันธ์</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="channels" value="Facebook"> Facebook</label>
-            <label><input type="checkbox" name="channels" value="Website"> Website</label>
-            <label><input type="checkbox" name="channels" value="Line"> Line</label>
+    <form name="content" method="POST" data-netlify="true" enctype="multipart/form-data" action="/thank-you.html">
+        <div class="form-group">
+            <label>เนื้อหางาน</label>
+            <textarea name="content" placeholder="กรุณาพิมพ์เนื้อหางาน" rows="5" required></textarea>
         </div>
-    </div>
 
-    <div class="form-btn">
-        <button type="submit">ส่งงาน</button>
-    </div>
+        <div class="form-group">
+            <label>ไฟล์สำหรับประชาสัมพันธ์ (อัพโหลด)</label>
+            <input type="file" name="file_upload" required>
+        </div>
+
+        <div class="form-group">
+            <label>ช่องทางประชาสัมพันธ์</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="channels" value="Facebook"> Facebook</label>
+                <label><input type="checkbox" name="channels" value="Website"> Website</label>
+                <label><input type="checkbox" name="channels" value="Line"> Line</label>
+            </div>
+        </div>
+
+        <div class="form-btn">
+            <button type="submit">ส่งงาน</button>
+        </div>
+    </form>
 </div>
-</form>
 </body>
 </html>
