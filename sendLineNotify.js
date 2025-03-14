@@ -1,5 +1,5 @@
 exports.handler = async function(event, context) {
-  const accessToken = "YOUR_ACCESS_TOKEN";
+  const accessToken = "EbAh5MprY0TXYxLoThuJ5k3gIzhQQ4uCnCnsLon37NM";
   const message = "📢 แจ้งเตือนจาก Netlify Functions!";
 
   const response = await fetch("https://notify-api.line.me/api/notify", {
