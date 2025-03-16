@@ -16,14 +16,13 @@
             align-items: center;
             height: 100vh;
             background: linear-gradient(135deg, #34e89e, #0f3443);
-             }
+        }
         a {
-    text-decoration: none; /* ลบขีดเส้นใต้ */
-    outline: none; /* ลบเส้นขอบที่อาจเกิดขึ้น */
-    border: none; /* ลบเส้นขอบ (ถ้ามี) */
-          }
+            text-decoration: none;
+            outline: none;
+            border: none;
+        }
         
-
         header {
             text-align: center;
             background-color: rgba(0, 0, 0, 0.5);
@@ -68,6 +67,19 @@
             font-size: 16px;
             font-weight: 300;
             margin-top: 10px;
+        }
+
+        /* เพิ่ม Media Query สำหรับหน้าจอมือถือ */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .content-box {
+                width: 80%; /* ปรับให้กว้างตามหน้าจอ */
+                max-width: 300px;
+                padding: 30px;
+            }
         }
     </style>
 </head>
